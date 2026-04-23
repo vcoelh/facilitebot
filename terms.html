@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos de Uso e Privacidade — Facilite Afiliados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:   #1e3d72;
+      --navy-dark: #152d55;
+      --orange: #f47920;
+      --orange-light: #fef3e8;
+      --blue:   #29abe2;
+      --blue-light: #e8f6fd;
+      --gray-bg: #f4f7fb;
+      --gray-border: #e2e8f0;
+      --text:   #2d3748;
+      --text-muted: #718096;
+      --white:  #ffffff;
+      --radius: 12px;
+      --shadow: 0 2px 12px rgba(30,61,114,.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--gray-bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 0.97rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--white);
+      border-bottom: 3px solid var(--orange);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 16px rgba(30,61,114,.1);
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .brand-tagline {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 2px solid transparent;
+      transition: all .2s;
+    }
+
+    nav a:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 60%, #0f2044 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 56px 20px 48px;
+    }
+
+    .hero img {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero p {
+      color: rgba(255,255,255,.7);
+      font-size: 0.95rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: linear-gradient(90deg, var(--navy) 0%, #274f8f 100%);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .card-header .icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .card-header h2 {
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .card-header .badge {
+      margin-left: auto;
+      background: rgba(244,121,32,.25);
+      color: #ffc680;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      white-space: nowrap;
+      border: 1px solid rgba(244,121,32,.4);
+    }
+
+    .card-body {
+      padding: 28px 32px;
+    }
+
+    .update-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-light);
+      color: #1a7ab0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-top: 24px;
+    }
+
+    .section:first-child { margin-top: 0; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gray-border);
+      margin-bottom: 14px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--orange);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    ul li {
+      padding-left: 22px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+
+    /* ── INFO BOX ── */
+    .info-box {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.93rem;
+      color: #155b82;
+    }
+
+    .info-box strong { color: var(--navy); }
+
+    .warn-box {
+      background: var(--orange-light);
+      border-left: 4px solid var(--orange);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.93rem;
+      color: #7a3a06;
+    }
+
+    /* ── TABLE ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: 8px;
+      border: 1px solid var(--gray-border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 520px;
+    }
+
+    thead tr {
+      background: linear-gradient(90deg, var(--navy) 0%, #274f8f 100%);
+    }
+
+    th {
+      text-align: left;
+      padding: 12px 16px;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-border);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #fafbfd; }
+    tbody tr:hover { background: var(--blue-light); transition: background .15s; }
+
+    /* ── RIGHTS GRID ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .right-item {
+      background: var(--gray-bg);
+      border: 1px solid var(--gray-border);
+      border-top: 3px solid var(--blue);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .right-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .right-item span { font-size: 0.87rem; color: var(--text-muted); }
+
+    /* ── LINKS ── */
+    a { color: var(--blue); text-decoration: none; font-weight: 500; }
+    a:hover { color: var(--orange); text-decoration: underline; }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact-avatar {
+      width: 44px;
+      height: 44px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info { flex: 1; min-width: 180px; }
+    .contact-info strong { display: block; color: var(--white); font-size: 0.95rem; }
+    .contact-info a { color: #7ec8f0; font-size: 0.88rem; }
+    .contact-info a:hover { color: var(--orange); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      font-size: 0.82rem;
+      padding: 24px 20px;
+    }
+
+    footer strong { color: var(--orange); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.4rem; }
+      .card-header { padding: 16px 20px; }
+      .card-body { padding: 20px; }
+      .card-header .badge { display: none; }
+      nav a { padding: 5px 10px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#">
+      <img src="logo_facilite_afiliados.jpg" alt="Logo Facilite Afiliados">
+      <div class="brand-text">
+        <span class="brand-name">Facilite Afiliados</span>
+        <span class="brand-tagline">Otimize Tempo, Impulsione Vendas</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#termos">Termos de Uso</a>
+      <a href="#privacidade">Privacidade</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <img src="logo_facilite_afiliados.jpg" alt="Facilite Afiliados">
+  <h1>Termos de Uso &amp; <span>Privacidade</span></h1>
+  <p>Documentos legais do FaciliteBot — bot do Telegram para geração de links de afiliados Shopee.</p>
+</div>
+
+<main>
+
+  <!-- ════════════════ TERMOS DE USO ════════════════ -->
+  <div class="card" id="termos">
+    <div class="card-header">
+      <span class="icon">📋</span>
+      <h2>Termos de Uso — FaciliteBot</h2>
+      <span class="badge">Documento Legal</span>
+    </div>
+    <div class="card-body">
+      <span class="update-tag">🗓 Última atualização: 23 de abril de 2026</span>
+
+      <p>Bem-vindo ao <strong>FaciliteBot</strong>. Ao clicar em <em>"Li e Aceito"</em> dentro do Telegram,
+        você declara ter lido, compreendido e concordado com os presentes Termos de Uso em sua totalidade.
+        Caso não concorde, não utilize o serviço.</p>
+
+      <div class="section">
+        <div class="section-title">1. O que é o FaciliteBot</div>
+        <p>O FaciliteBot é um bot do Telegram que, a partir de um link de vídeo da Shopee enviado pelo usuário:</p>
+        <ul>
+          <li>Tenta recuperar e encaminhar o vídeo original;</li>
+          <li>Gera um link de afiliado para o produto correspondente.</li>
+        </ul>
+        <p>O serviço é oferecido gratuitamente e sem garantias de disponibilidade ou resultado.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">2. Elegibilidade e Aceite</div>
+        <ul>
+          <li>Você deve ter pelo menos 18 anos ou a maioridade legal aplicável no seu país.</li>
+          <li>O aceite é registrado com seu ID do Telegram, nome de exibição e @username (quando disponíveis) e a data/hora do clique.</li>
+          <li>O aceite é pessoal e intransferível. Não compartilhe sua conta do Telegram com terceiros para uso do bot.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">3. Uso Permitido e Responsabilidades</div>
+        <p>Ao utilizar o FaciliteBot, você se compromete a:</p>
+        <ul>
+          <li>Enviar apenas links de vídeos da Shopee dos quais você possui permissão explícita para baixar, reproduzir ou redistribuir;</li>
+          <li>Utilizar o conteúdo obtido de acordo com os <a href="https://shopee.com.br/legaldoc/term-of-service" target="_blank" rel="noopener">Termos de Serviço da Shopee</a> e a legislação brasileira vigente;</li>
+          <li>Não automatizar o envio de links (spam) ou tentar sobrecarregar o serviço.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">4. Uso Proibido</div>
+        <div class="warn-box">
+          As seguintes práticas são expressamente vedadas e podem resultar em suspensão imediata.
+        </div>
+        <ul>
+          <li>Baixar ou redistribuir vídeos protegidos por direitos autorais sem autorização do titular;</li>
+          <li>Utilizar o bot para fins comerciais de revenda de conteúdo de terceiros;</li>
+          <li>Tentar burlar limitações técnicas, explorar vulnerabilidades ou fazer engenharia reversa do serviço;</li>
+          <li>Usar o bot para qualquer atividade ilícita ou que viole direitos de terceiros.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">5. Propriedade Intelectual</div>
+        <p>O FaciliteBot é uma ferramenta técnica de intermediação. Ele <strong>não concede</strong> direitos de propriedade intelectual, licenças ou qualquer outra autorização sobre os vídeos ou conteúdos processados. Todos os direitos sobre o conteúdo permanecem com seus respectivos titulares.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">6. Isenção de Responsabilidade</div>
+        <ul>
+          <li>O serviço é fornecido <em>"no estado em que se encontra"</em>, sem garantias de qualquer natureza.</li>
+          <li>Não nos responsabilizamos por falhas de download, links expirados, indisponibilidade da API da Shopee ou qualquer dano direto ou indireto decorrente do uso do bot.</li>
+          <li>O usuário é o único responsável pelo conteúdo que processa e pela forma como o utiliza.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">7. Suspensão e Encerramento</div>
+        <p>Reservamo-nos o direito de suspender ou encerrar o acesso de qualquer usuário que viole estes termos, sem aviso prévio.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">8. Alterações nos Termos</div>
+        <p>Podemos atualizar estes Termos a qualquer momento. A data da última atualização está indicada no topo deste documento. O uso continuado do bot após a publicação de novos termos implica na aceitação dos mesmos. Para termos materialmente diferentes, solicitaremos um novo aceite explícito.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">9. Contato</div>
+        <div class="contact-card">
+          <div class="contact-avatar">✉️</div>
+          <div class="contact-info">
+            <strong>Dúvidas sobre os Termos</strong>
+            <a href="mailto:coelhovictor0715@gmail.com">coelhovictor0715@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ POLÍTICA DE PRIVACIDADE ════════════════ -->
+  <div class="card" id="privacidade">
+    <div class="card-header">
+      <span class="icon">🔒</span>
+      <h2>Política de Privacidade — FaciliteBot</h2>
+      <span class="badge">LGPD · Lei nº 13.709/2018</span>
+    </div>
+    <div class="card-body">
+      <span class="update-tag">🗓 Última atualização: 23 de abril de 2026</span>
+
+      <p>Esta Política descreve como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais ao interagir com o FaciliteBot, em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.</p>
+
+      <div class="info-box">
+        <strong>Controlador de dados:</strong> Victor Coelho —
+        <a href="mailto:coelhovictor0715@gmail.com">coelhovictor0715@gmail.com</a>
+      </div>
+
+      <div class="section">
+        <div class="section-title">1. Dados Coletados</div>
+        <p>Coletamos apenas o mínimo necessário para o funcionamento do serviço:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Dado</th>
+                <th>Origem</th>
+                <th>Finalidade</th>
+                <th>Obrigatoriedade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ID do usuário</strong></td>
+                <td>Telegram</td>
+                <td>Identificar o aceite dos termos e registrar uso</td>
+                <td>Necessário</td>
+              </tr>
+              <tr>
+                <td><strong>@username</strong></td>
+                <td>Telegram</td>
+                <td>Identificação legível nas estatísticas</td>
+                <td>Opcional</td>
+              </tr>
+              <tr>
+                <td><strong>Nome de exibição</strong></td>
+                <td>Telegram</td>
+                <td>Identificação legível nas estatísticas</td>
+                <td>Opcional</td>
+              </tr>
+              <tr>
+                <td><strong>Status de aceite</strong></td>
+                <td>Interação com o bot</td>
+                <td>Registrar consentimento (clickwrap)</td>
+                <td>Necessário</td>
+              </tr>
+              <tr>
+                <td><strong>Data/hora do aceite</strong></td>
+                <td>Sistema</td>
+                <td>Comprovação e auditoria do consentimento</td>
+                <td>Necessário</td>
+              </tr>
+              <tr>
+                <td><strong>Registro de uso</strong></td>
+                <td>Sistema</td>
+                <td>Estatísticas agregadas para melhoria do serviço</td>
+                <td>Necessário</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Não coletamos</strong> o conteúdo dos links enviados, histórico de conversas, localização, dados financeiros ou qualquer dado sensível.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">2. Base Legal</div>
+        <p>O tratamento dos seus dados é fundamentado no seu <strong>consentimento</strong> (art. 7º, I, LGPD), manifestado ao clicar em "Li e Aceito". Você pode revogar esse consentimento a qualquer momento — veja a seção 6.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">3. Compartilhamento de Dados</div>
+        <p>Seus dados <strong>não são vendidos, alugados ou compartilhados</strong> com terceiros para fins comerciais. O único compartilhamento técnico ocorre com:</p>
+        <ul>
+          <li><strong>Telegram:</strong> plataforma de mensagens através da qual o bot opera. Consulte a <a href="https://telegram.org/privacy" target="_blank" rel="noopener">Política de Privacidade do Telegram</a>.</li>
+          <li><strong>API de Afiliados da Shopee:</strong> o link original que você envia é encaminhado à API para geração do link de afiliado. Consulte a <a href="https://shopee.com.br/legaldoc/privacy-policy" target="_blank" rel="noopener">Política de Privacidade da Shopee</a>.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">4. Retenção dos Dados</div>
+        <p>Seus dados são mantidos enquanto o serviço estiver em operação ou até que você solicite a exclusão. Registros de aceite de termos podem ser mantidos por até <strong>5 anos</strong> após o encerramento do serviço para fins de comprovação legal, conforme art. 16, I, LGPD.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">5. Segurança</div>
+        <p>Os dados são armazenados em banco de dados com acesso restrito ao administrador do serviço. Não há transmissão pública dos seus dados. Embora adotemos medidas razoáveis de segurança, nenhum sistema é 100% inviolável.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">6. Seus Direitos (LGPD, art. 18)</div>
+        <div class="rights-grid">
+          <div class="right-item">
+            <strong>Acesso</strong>
+            <span>Confirmar a existência de tratamento e acessar seus dados</span>
+          </div>
+          <div class="right-item">
+            <strong>Correção</strong>
+            <span>Solicitar atualização de dados incompletos ou inexatos</span>
+          </div>
+          <div class="right-item">
+            <strong>Exclusão</strong>
+            <span>Pedir a remoção dos dados coletados com base no consentimento</span>
+          </div>
+          <div class="right-item">
+            <strong>Revogação</strong>
+            <span>Retirar seu aceite a qualquer momento</span>
+          </div>
+          <div class="right-item">
+            <strong>Portabilidade</strong>
+            <span>Receber seus dados em formato estruturado</span>
+          </div>
+          <div class="right-item">
+            <strong>Informação</strong>
+            <span>Saber com quem seus dados são compartilhados</span>
+          </div>
+        </div>
+        <p style="margin-top:16px">Para exercer qualquer desses direitos, envie um e-mail para
+          <a href="mailto:coelhovictor0715@gmail.com">coelhovictor0715@gmail.com</a>
+          com o assunto <em>"Direitos LGPD — FaciliteBot"</em> e seu ID do Telegram.
+          Respondemos em até <strong>15 dias úteis</strong>.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">7. Menores de Idade</div>
+        <p>O serviço não é destinado a menores de 18 anos. Se tomarmos conhecimento de que coletamos dados de um menor, excluiremos essas informações imediatamente.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">8. Alterações nesta Política</div>
+        <p>Podemos atualizar esta Política periodicamente. A data da última atualização está indicada no topo do documento. Alterações materiais serão comunicadas através do próprio bot.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">9. Contato e DPO</div>
+        <div class="contact-card">
+          <div class="contact-avatar">👤</div>
+          <div class="contact-info">
+            <strong>Victor Coelho — Encarregado de Dados (DPO)</strong>
+            <a href="mailto:coelhovictor0715@gmail.com">coelhovictor0715@gmail.com</a>
+          </div>
+        </div>
+        <div class="info-box" style="margin-top:14px">
+          Autoridade Nacional de Proteção de Dados (ANPD):
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">www.gov.br/anpd</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 <strong>Facilite Afiliados</strong>. Todos os direitos reservados.<br>
+  Ao usar o FaciliteBot você concorda com os documentos acima.
+</footer>
+
+</body>
+</html>

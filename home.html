@@ -1,198 +1,461 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facilite Afiliados - Otimize Tempo, Impulsione Vendas</title>
-    <style>
-        /* Variáveis de Cores (baseadas na logo) */
-        :root {
-            --azul-escuro: #003B73;
-            --azul-claro: #00A4E4;
-            --laranja: #F37021;
-            --fundo: #f8fbff;
-            --texto: #333333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilite Afiliados — vídeo, link e legenda em 5 segundos</title>
+<meta name="description" content="Bot no Telegram para afiliados Shopee: cole o link do produto e receba o vídeo sem marca d'água, seu link de afiliado e a legenda pronta em 5 segundos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ Órbita — tokens (desgn-system/design.md) ============ */
+:root{
+  --ink-900:#061B36; --ink-800:#0A2A5C; --ink-700:#0D3D82; --ink-500:#1E5FBE;
+  --sky-500:#29B6F6; --sky-400:#4FC3F7; --sky-300:#7DD3FC;
+  --paper:#FFFFFF;
+  --paper-dim:rgba(255,255,255,.72);
+  --paper-soft:rgba(255,255,255,.55);
+  --paper-ghost:rgba(255,255,255,.16);
+  --night:#0A1929; --night-2:#132238;
+  --laranja:#F37021; /* acento da marca — usado só no logo e no play */
+  --grad-field:radial-gradient(120% 90% at 50% 20%,#2E77D4 0%,#1E5FBE 32%,#114188 72%,#061B36 100%);
+  --grad-sky:radial-gradient(120% 120% at 30% 20%,#B8E5FB 0%,#4FC3F7 42%,#1AA0E8 78%,#0D6EB0 100%);
+  --grad-chrome:conic-gradient(from 210deg at 50% 50%,#6B7686 0deg,#C9D0DB 60deg,#F2F5F9 110deg,#B4BDCB 180deg,#6B7686 250deg,#99A2B3 310deg,#6B7686 360deg);
+  --r-md:14px; --r-lg:22px; --r-xl:36px; --r-pill:999px;
+  --lift-1:0 2px 8px rgba(6,27,54,.24);
+  --lift-2:0 12px 28px rgba(6,27,54,.35),0 2px 4px rgba(6,27,54,.28);
+  --lift-3:0 32px 60px rgba(6,27,54,.45),0 8px 14px rgba(6,27,54,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter",sans-serif;font-size:17px;line-height:1.55;
+  color:var(--paper);background:var(--ink-900);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--sky-400)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--sky-300);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:112px 0}
 
-        /* Reset Básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+/* ============ Tipos ============ */
+.eyebrow{
+  font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sky-300);
+  display:inline-flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:"";width:32px;height:2px;background:var(--sky-300);opacity:.6}
+h1,h2,h3{font-family:"Sora",sans-serif}
+h1{font-weight:800;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-.03em}
+h2{font-weight:700;font-size:clamp(34px,4.5vw,54px);line-height:1;letter-spacing:-.02em}
+h3{font-weight:700;font-size:22px;letter-spacing:-.015em}
+.lead{color:var(--paper-dim);max-width:54ch}
 
-        body {
-            background-color: var(--fundo);
-            color: var(--texto);
-            line-height: 1.6;
-        }
+/* ============ Botões ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:"Sora",sans-serif;font-weight:700;font-size:16px;
+  padding:16px 32px;border-radius:var(--r-pill);text-decoration:none;
+  border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;
+}
+.btn-primary{
+  background:var(--grad-sky);color:var(--paper);
+  box-shadow:var(--lift-2),inset 0 1px 0 rgba(255,255,255,.4);
+}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{
+  color:var(--paper);border:1.5px solid var(--paper-ghost);background:transparent;
+}
+.btn-ghost:hover{border-color:var(--sky-300)}
 
-        /* Cabeçalho */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* ============ Logo ============ */
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--paper)}
+.brand svg{width:38px;height:38px;filter:drop-shadow(0 4px 8px rgba(6,27,54,.4))}
+.brand b{font-family:"Sora",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.015em}
 
-        .logo-container img {
-            max-height: 80px; /* Ajuste conforme necessário */
-        }
+/* ============ Header ============ */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(6,27,54,.7);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--paper-ghost);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{
+  color:var(--paper-dim);text-decoration:none;font-size:15px;font-weight:500;
+}
+.nav ul a:hover{color:var(--paper)}
+.nav .btn{padding:11px 22px;font-size:14px}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+/* ============ Hero ============ */
+.hero{
+  background:var(--grad-field);
+  padding:96px 0 0;position:relative;overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+}
+.hero-copy{display:flex;flex-direction:column;gap:28px;padding-bottom:112px}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero-meta{
+  font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--paper-soft);
+}
 
-        nav a {
-            text-decoration: none;
-            color: var(--azul-escuro);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
+/* Badge cromado — assinatura do sistema. Um grande por composição. */
+.badge{
+  display:block;width:88px;height:88px;border-radius:50%;position:relative;flex:none;
+  background:var(--grad-chrome);padding:10px;
+  filter:drop-shadow(0 18px 24px rgba(6,27,54,.5));
+}
+.badge::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(60% 40% at 32% 22%,rgba(255,255,255,.9),rgba(255,255,255,0) 60%);
+  mix-blend-mode:screen;opacity:.9;
+}
+.badge-inner{
+  display:flex;width:100%;height:100%;border-radius:50%;background:var(--grad-sky);
+  align-items:center;justify-content:center;overflow:hidden;position:relative;
+  box-shadow:inset 0 -6px 14px rgba(6,27,54,.35),inset 0 6px 12px rgba(255,255,255,.35);
+}
+.badge-inner svg{width:45%;height:45%;fill:var(--paper);filter:drop-shadow(0 2px 3px rgba(6,27,54,.4))}
+.badge.sm{width:64px;height:64px;padding:7px}
 
-        nav a:hover {
-            color: var(--laranja);
-        }
+/* ============ Phone mockup ============ */
+.stage{position:relative;align-self:end;display:flex;justify-content:center}
+.phone{
+  width:320px;background:var(--night);border:2.5px solid #2A3446;
+  border-radius:var(--r-xl);padding:14px;position:relative;
+  transform:rotate(-6deg);box-shadow:var(--lift-3);
+}
+.phone::before{ /* notch */
+  content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);
+  width:70px;height:18px;background:#000;border-radius:12px;z-index:2;
+}
+.screen{
+  background:var(--night);border-radius:24px;padding:38px 12px 16px;
+  display:flex;flex-direction:column;gap:10px;min-height:480px;
+}
+.msg{
+  background:var(--night-2);border-radius:var(--r-md);padding:10px 12px;
+  font-size:13.5px;line-height:1.5;max-width:92%;
+}
+.msg .who{color:var(--sky-400);font-weight:600;display:block;margin-bottom:2px;font-size:12.5px}
+.msg.user{align-self:flex-end;background:#1B3A63}
+.msg .meta{
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;
+  color:var(--paper-soft);display:block;margin-top:6px;text-align:right;
+}
+.thumb{
+  border-radius:8px;background:linear-gradient(135deg,#123055,#0B1E3A);
+  height:110px;display:flex;align-items:center;justify-content:center;margin:8px 0 6px;
+}
+.thumb svg{width:36px;height:36px}
+.caption-line{color:var(--paper-dim)}
+.caption-line b{color:var(--sky-300);font-weight:600}
+.tags{color:var(--paper-soft);font-size:12px}
+/* reflexo do telefone */
+.stage::after{
+  content:"";position:absolute;bottom:-120px;width:320px;height:120px;
+  background:linear-gradient(rgba(46,119,212,.18),transparent 75%);
+  transform:rotate(-6deg) scaleY(-1);filter:blur(6px);border-radius:var(--r-xl);
+  pointer-events:none;
+}
+/* satélites em órbita do telefone */
+.sat{position:absolute;z-index:3}
+.sat.s1{top:-14px;right:-4%}
+.sat.s2{bottom:110px;left:-6%}
+@media (prefers-reduced-motion:no-preference){
+  .sat{animation:float 6s ease-in-out infinite}
+  .sat.s2{animation-delay:-3s}
+  @keyframes float{50%{transform:translateY(-10px)}}
+}
 
-        /* Seção Principal (Hero) */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-claro) 100%);
-            color: white;
-        }
+/* ============ Seções escuras ============ */
+.section-dark{background:var(--ink-900)}
+.section-field{background:var(--grad-field)}
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:56px;max-width:60ch}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+/* Como funciona */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{
+  background:rgba(255,255,255,.04);border:1px solid var(--paper-ghost);
+  border-radius:var(--r-lg);padding:32px 28px;display:flex;flex-direction:column;gap:14px;
+}
+.step .n{
+  font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;
+  color:var(--sky-300);
+}
+.step p{color:var(--paper-dim);font-size:15px}
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
+/* Recursos */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{
+  background:rgba(6,27,54,.45);border:1px solid var(--paper-ghost);
+  border-radius:var(--r-lg);padding:36px 28px;
+  display:flex;flex-direction:column;gap:18px;
+  box-shadow:var(--lift-2);
+  transition:transform .2s ease;
+}
+.card:hover{transform:translateY(-6px)}
+.card p{color:var(--paper-dim);font-size:15px}
 
-        .btn-cta {
-            background-color: var(--laranja);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: transform 0.2s, background-color 0.2s;
-        }
+/* Planos */
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,440px));gap:24px;justify-content:center}
+.plan{
+  background:rgba(255,255,255,.04);border:1px solid var(--paper-ghost);
+  border-radius:var(--r-lg);padding:40px 36px;display:flex;flex-direction:column;gap:20px;
+}
+.plan.featured{
+  background:rgba(6,27,54,.55);border-color:var(--sky-400);
+  box-shadow:var(--lift-2),inset 0 1px 0 rgba(255,255,255,.35);
+}
+.plan .price{font-family:"Sora",sans-serif;font-weight:800;font-size:52px;letter-spacing:-.03em}
+.plan .price small{font-size:17px;font-weight:600;color:var(--paper-soft);letter-spacing:0}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.plan li{
+  color:var(--paper-dim);font-size:15px;padding-left:26px;position:relative;
+}
+.plan li::before{
+  content:"";position:absolute;left:0;top:5px;width:14px;height:14px;border-radius:50%;
+  background:var(--grad-sky);box-shadow:var(--lift-1);
+}
+.plan .tag{
+  align-self:flex-start;font-family:"JetBrains Mono",monospace;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--sky-300);
+  border:1px solid rgba(125,211,252,.4);border-radius:var(--r-pill);padding:5px 12px;
+}
 
-        .btn-cta:hover {
-            background-color: #d65a15;
-            transform: scale(1.05);
-        }
+/* CTA final */
+.final{display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+.final h2{max-width:18ch}
 
-        /* Seção de Funcionalidades */
-        .features {
-            padding: 80px 5%;
-            text-align: center;
-        }
+/* Footer */
+footer{
+  border-top:1px solid var(--paper-ghost);padding:40px 0;
+  background:var(--ink-900);
+}
+.foot{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:14px;color:var(--paper-soft);
+}
+.foot a{color:var(--paper-soft);text-decoration:none}
+.foot a:hover{color:var(--paper)}
 
-        .features h2 {
-            color: var(--azul-escuro);
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-        }
-
-        .cards-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 30px;
-            width: 300px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--azul-claro);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-top-color: var(--laranja);
-        }
-
-        .card h3 {
-            color: var(--azul-escuro);
-            margin-bottom: 15px;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--azul-escuro);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+/* ============ Responsivo (quebra única: 780px) ============ */
+@media (max-width:780px){
+  section{padding:72px 0}
+  .nav ul{display:none}
+  .brand b{font-size:16px;white-space:nowrap}
+  .nav .btn{padding:10px 16px;font-size:13px;white-space:nowrap}
+  .hero{padding-top:56px}
+  .hero-grid{grid-template-columns:1fr;gap:8px}
+  .hero-copy{padding-bottom:40px}
+  .stage{margin-top:24px}
+  .phone{width:280px;transform:rotate(-4deg)}
+  .stage::after{display:none}
+  .sat{display:none}
+  .steps,.cards{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="logo_facilite_afiliados.jpg" alt="Logo Facilite Afiliados">
+<!-- ============ Marca (SVG inline — mesma marca do avatar) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg-laranja" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF9A3E"/><stop offset="1" stop-color="#EF5B0C"/>
+    </linearGradient>
+    <symbol id="logo-mark" viewBox="0 0 1024 1024">
+      <g fill="#FFFFFF" stroke="#FFFFFF" stroke-width="26" stroke-linejoin="round">
+        <rect x="225" y="235" width="574" height="514" rx="128"/>
+        <path d="M340 700 L262 848 Q250 872 282 858 L470 750 Z"/>
+      </g>
+      <path d="M462 382 L666 492 L462 602 Z" fill="url(#lg-laranja)" stroke="url(#lg-laranja)"
+            stroke-width="72" stroke-linejoin="round" transform="translate(-14 0)"/>
+    </symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M2 12l20-8-3 18-8-6-2 5-1-6L2 12z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <svg><use href="#logo-mark"/></svg>
+      <b>Facilite Afiliados</b>
+    </a>
+    <ul>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#recursos">O que você recebe</a></li>
+      <li><a href="#planos">Planos</a></li>
+    </ul>
+    <!-- TODO: trocar pelo @ real do bot -->
+    <a class="btn btn-primary" href="https://t.me/facilite_afiliados_bot">abrir no Telegram</a>
+  </div>
+</header>
+
+<main>
+  <!-- ============ Hero ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Bot para afiliados Shopee</span>
+        <h1>De 5 minutos para 5 segundos.</h1>
+        <p class="lead">
+          Cole o link de um produto da Shopee no Telegram. O bot devolve o vídeo sem
+          marca d'água, o seu link de afiliado e a legenda pronta, numa mensagem só.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://t.me/facilite_afiliados_bot">começar de graça</a>
+          <a class="btn btn-ghost" href="#como-funciona">ver como funciona</a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#funcionalidades">Como Funciona</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+        <span class="hero-meta">10 vídeos por dia grátis · sem cartão</span>
+      </div>
 
-    <main>
-        <section id="inicio" class="hero">
-            <h1>Otimize Tempo, Impulsione Vendas</h1>
-            <p>A ferramenta definitiva para afiliados da Shopee. Capture links de produtos e baixe vídeos limpos, sem marca d'água, em segundos.</p>
-            <a href="#cadastro" class="btn-cta">Começar Agora</a>
-        </section>
-
-        <section id="funcionalidades" class="features">
-            <h2>Por que escolher o Facilite Afiliados?</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Geração Rápida de Links</h3>
-                    <p>Converta URLs normais da Shopee em seus links de afiliado automaticamente com um clique.</p>
-                </div>
-                <div class="card">
-                    <h3>Vídeos Sem Marca D'água</h3>
-                    <p>Baixe vídeos dos produtos originais com alta qualidade e sem poluição visual para postar nas suas redes.</p>
-                </div>
-                <div class="card">
-                    <h3>Otimização de Tempo</h3>
-                    <p>Deixe o trabalho manual de lado. Escale suas campanhas focando no que importa: a sua estratégia de vendas.</p>
-                </div>
+      <div class="stage">
+        <span class="sat s1">
+          <span class="badge sm"><span class="badge-inner"><svg><use href="#i-video"/></svg></span></span>
+        </span>
+        <span class="sat s2">
+          <span class="badge sm"><span class="badge-inner"><svg><use href="#i-link"/></svg></span></span>
+        </span>
+        <div class="phone" aria-label="Conversa de exemplo com o bot no Telegram">
+          <div class="screen">
+            <div class="msg user">
+              https://br.shp.ee/48brmk4q
+              <span class="meta">14:02</span>
             </div>
-        </section>
-    </main>
+            <div class="msg">
+              <span class="who">Facilite Afiliados</span>
+              <div class="thumb">
+                <svg viewBox="0 0 24 24" fill="url(#lg-laranja)"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="caption-line">🛒 Compre aqui: <b>shope.ee/aff_x9k2</b></span>
+              <span class="caption-line">Organizador que resolve sua gaveta de vez. Garanta o seu!</span>
+              <span class="tags">#shopee #achadinhos #organizacao</span>
+              <span class="meta">entregue em 5s · 14:02</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2026 Facilite Afiliados. Todos os direitos reservados.</p>
-    </footer>
+  <!-- ============ Como funciona ============ -->
+  <section class="section-dark" id="como-funciona">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Três passos. Um deles é seu.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">PASSO 01</span>
+          <h3>Cole o link</h3>
+          <p>Qualquer link da Shopee serve: do app, encurtado ou da página do produto. O bot limpa e corrige sozinho.</p>
+        </div>
+        <div class="step">
+          <span class="n">PASSO 02</span>
+          <h3>O bot processa</h3>
+          <p>Em paralelo, ele extrai o vídeo, gera o seu link de afiliado com rastreio e escreve a legenda com IA.</p>
+        </div>
+        <div class="step">
+          <span class="n">PASSO 03</span>
+          <h3>Receba e poste</h3>
+          <p>Vídeo, link e legenda chegam numa única mensagem em cerca de 5 segundos. É só encaminhar e publicar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Recursos ============ -->
+  <section class="section-field" id="recursos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">O que você recebe</span>
+        <h2>As 4 tarefas do afiliado, feitas de uma vez.</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="badge"><span class="badge-inner"><svg><use href="#i-video"/></svg></span></span>
+          <h3>Vídeo sem marca d'água</h3>
+          <p>O vídeo original do produto, limpo, pronto para o Reels e para o TikTok. Sem sites de download cheios de anúncio.</p>
+        </div>
+        <div class="card">
+          <span class="badge"><span class="badge-inner"><svg><use href="#i-link"/></svg></span></span>
+          <h3>Link de afiliado com rastreio</h3>
+          <p>Gerado na hora pela API oficial da Shopee, já com o seu identificador. Nenhuma comissão se perde por link errado.</p>
+        </div>
+        <div class="card">
+          <span class="badge"><span class="badge-inner"><svg><use href="#i-star"/></svg></span></span>
+          <h3>Legenda escrita por IA</h3>
+          <p>Texto persuasivo e hashtags relevantes, criados a partir do título do produto. É só copiar junto com o vídeo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Planos ============ -->
+  <section class="section-dark" id="planos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Planos</span>
+        <h2>Teste tudo antes de gastar um real.</h2>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <span class="tag">Grátis</span>
+          <div class="price">R$ 0</div>
+          <ul>
+            <li>10 vídeos por dia</li>
+            <li>Vídeo sem marca d'água</li>
+            <li>Link de afiliado com rastreio</li>
+            <li>Legenda e hashtags por IA</li>
+          </ul>
+          <a class="btn btn-ghost" href="https://t.me/facilite_afiliados_bot">começar agora</a>
+        </div>
+        <div class="plan featured">
+          <span class="tag">Ilimitado</span>
+          <div class="price">R$ 7,90 <small>pagamento único</small></div>
+          <ul>
+            <li>Vídeos ilimitados, sem contagem diária</li>
+            <li>Processamento prioritário</li>
+            <li>Tudo do plano grátis</li>
+            <li>Ativação automática após o pagamento</li>
+          </ul>
+          <a class="btn btn-primary" href="https://t.me/facilite_afiliados_bot">assinar pelo bot</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA final ============ -->
+  <section class="section-field">
+    <div class="wrap final">
+      <span class="badge"><span class="badge-inner"><svg><use href="#i-send"/></svg></span></span>
+      <h2>Seu próximo post leva 5 segundos.</h2>
+      <p class="lead" style="text-align:center">Abra o bot, cole um link e veja com os seus olhos.</p>
+      <a class="btn btn-primary" href="https://t.me/facilite_afiliados_bot">abrir no Telegram</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#">
+      <svg><use href="#logo-mark"/></svg>
+      <b>Facilite Afiliados</b>
+    </a>
+    <span>© 2026 Facilite Afiliados</span>
+    <a href="terms.html">Termos de uso</a>
+  </div>
+</footer>
 
 </body>
 </html>
